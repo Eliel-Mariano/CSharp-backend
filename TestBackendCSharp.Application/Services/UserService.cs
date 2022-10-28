@@ -61,11 +61,7 @@ namespace TestCSharp.Application.Services
                     throw new Exception("id is required!");
                 }
 
-                var user = new User
-                {
-                    Name = userDto.Name,
-                    Email = userDto.Email
-                };
+                var user = await _userRepository.GetById(id);
 
                 var savedUser = await _userRepository.Update(id, user);
 

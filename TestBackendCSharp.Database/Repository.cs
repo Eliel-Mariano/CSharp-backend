@@ -46,10 +46,5 @@ namespace TestCSharp.Database
         {
             return _collection.AsQueryable<T>();
         }
-
-        Task<T> IRepository<T>.Update(Guid id, T entidade)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
