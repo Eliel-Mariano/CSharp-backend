@@ -3,7 +3,6 @@
 using TestCSharp.Application.Interfaces;
 using TestCSharp.Application.Services;
 using TestCSharp.Business.Business;
-=======
 ﻿using TestCSharp.Application.Interfaces;
 using TestCSharp.Application.Services;
 
@@ -24,8 +23,6 @@ namespace TestCSharp.Api.Configuration
 
             services.AddScoped<ITestRepository, TestRepository>();
             services.AddScoped<TestService, TestService>();
-
-
 
             //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

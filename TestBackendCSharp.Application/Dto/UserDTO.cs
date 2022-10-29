@@ -1,9 +1,5 @@
-<<<<<<< featuresTransformatorAndTest
-﻿
-namespace TestCSharp.ControllersDTO
-=======
+
 ﻿namespace TestCSharp.ControllersDTO
->>>>>>> featureUser
 {
     public class UserDTO
     {
