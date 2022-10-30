@@ -31,7 +31,8 @@ namespace TestCSharp.Business.Business
                     internalNumber = tansformatorDto.internalNumber,
                     tensionClass = tansformatorDto.tensionClass,
                     potency = tansformatorDto.potency,
-                    current = tansformatorDto.current
+                    current = tansformatorDto.current,
+                    UserId = tansformatorDto.UserId
                 };
 
                 var savedTansformator = await _tansformatorRepository.Create(tansformator);
@@ -43,7 +44,8 @@ namespace TestCSharp.Business.Business
                     internalNumber = savedTansformator.internalNumber,
                     tensionClass = savedTansformator.tensionClass,
                     potency = savedTansformator.potency,
-                    current = savedTansformator.current
+                    current = savedTansformator.current,
+                    UserId = savedTansformator.UserId
                 };
 
                 return tansformatorViewModel;
@@ -86,7 +88,8 @@ namespace TestCSharp.Business.Business
                     internalNumber = savedTansformator.internalNumber,
                     tensionClass = savedTansformator.tensionClass,
                     potency = savedTansformator.potency,
-                    current = savedTansformator.current
+                    current = savedTansformator.current,
+                    UserId = savedTansformator.UserId
                 };
 
                 return tansformatorViewModel;
@@ -117,7 +120,8 @@ namespace TestCSharp.Business.Business
                     potency = tansformator.potency,
                     current = tansformator.current,
                     CreatedAt = tansformator.CreatedAt,
-                    UpdatedAt = tansformator.UpdatedAt
+                    UpdatedAt = tansformator.UpdatedAt,
+                    UserId = tansformator.UserId
                 };
 
                 return tansformatorViewModel;

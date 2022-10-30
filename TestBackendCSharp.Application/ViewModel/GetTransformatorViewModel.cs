@@ -12,5 +12,6 @@ namespace TestBackendCSharp.Application.ViewModel
         public int current { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+        public Guid UserId { get; set; }
     }
 }

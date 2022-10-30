@@ -1,5 +1,6 @@
 ﻿using TestBackendCSharp.Application.ViewModel;
 using TestCSharp.Application.Interfaces;
+using TestCSharp.Business.Models;
 using TestCSharp.ControllersDTO;
 using TestCSharp.Models;
 
@@ -36,7 +37,9 @@ namespace TestCSharp.Business.Business
                 var test = new Test
                 {
                     testName = testDto.testName,
-                    testStatus = testDto.testStatus
+                    testStatus = testDto.testStatus,
+                    testDurationInSeconds = testDto.testDurationInSeconds,
+                    TransformatorId = testDto.TransformatorId
                 };
 
                 var savedTest = await _testRepository.Create(test);
@@ -46,7 +49,8 @@ namespace TestCSharp.Business.Business
                     Id = savedTest.Id,
                     testName = savedTest.testName,
                     testStatus = savedTest.testStatus,
-                    testDurationInSeconds = savedTest.testDurationInSeconds
+                    testDurationInSeconds = savedTest.testDurationInSeconds,
+                    TransformatorId = savedTest.TransformatorId
                 };
 
                 return testViewModel;
@@ -94,7 +98,8 @@ namespace TestCSharp.Business.Business
                     Id = id,
                     testName = savedTest.testName,
                     testStatus = savedTest.testStatus,
-                    testDurationInSeconds = savedTest.testDurationInSeconds
+                    testDurationInSeconds = savedTest.testDurationInSeconds,
+                    TransformatorId = savedTest.TransformatorId
                 };
 
                 return testViewModel;
@@ -123,7 +128,8 @@ namespace TestCSharp.Business.Business
                     testStatus = test.testStatus,
                     testDurationInSeconds = test.testDurationInSeconds,
                     CreatedAt = test.CreatedAt,
-                    UpdatedAt = test.UpdatedAt
+                    UpdatedAt = test.UpdatedAt,
+                    TransformatorId = test.TransformatorId
                 };
 
                 return testViewModel;

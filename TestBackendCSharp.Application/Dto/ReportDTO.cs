@@ -12,5 +12,7 @@ namespace TestBackendCSharp.Application.Dto
         public bool Status { get; set; }
 
         public Guid TestId { get; set; }
+        public Guid TransformatorId { get; set; }
+
     }
 }

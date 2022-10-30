@@ -7,6 +7,7 @@ namespace TestBackendCSharp.Application.ViewModel
         public Guid Id { get; set; }
         public string Name { get; set; }
         public bool Status { get; set; }
+
         public string UserName { get; set; }
         public string UserEmail { get; set; }
         public Guid UserId { get; set; }

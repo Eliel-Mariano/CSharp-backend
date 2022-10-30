@@ -32,5 +32,19 @@ namespace TestBackendCSharp.Api.Controllers
                 throw;
             }
         }
+        [HttpGet]
+        public async Task<ActionResult<GetReportViewModel>> GetById(Guid id)
+        {
+            try
+            {
+                var report = await _reportService.GetById(id);
+
+                return Ok(report);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

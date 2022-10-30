@@ -8,5 +8,7 @@
         public int testDurationInSeconds { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+        public Guid TransformatorId { get; set; }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿
+using System.Threading.Tasks;
 using TestBackendCSharp.Application.Dto;
 using TestBackendCSharp.Application.Interfaces;
 using TestBackendCSharp.Application.ViewModel;
@@ -7,6 +8,7 @@ using TestCSharp.Application.Interfaces;
 using TestCSharp.Business.Models;
 using TestCSharp.ControllersDTO;
 using TestCSharp.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TestBackendCSharp.Application.Services
 {
@@ -57,14 +59,66 @@ namespace TestBackendCSharp.Application.Services
 
                 var transformator = await _tansformatorRepository.GetById(report.TransformatorId);
 
-                var user = await _userRepository.GetById(report.)
+                var user = await _userRepository.GetById(transformator.UserId);
 
                 var reportViewModel = new ReportViewModel
                 {
                     Id = savedReport.Id,
                     Name = savedReport.Name,
-                    Status = savedReport.Status
-                    //Adicionar
+                    Status = savedReport.Status,
+                    UserId = transformator.UserId,
+                    TestName = test.testName,
+                    TestId = test.Id,
+                    TestStatus = test.testStatus,
+                    TestDurationInSeconds = test.testDurationInSeconds,
+                    TransformatorName = transformator.transformatorName,
+                    TransformatorId = transformator.Id ,
+                    TransformatorInternalNumber = transformator.internalNumber,
+                    TransformatorTensionClass = transformator.tensionClass,
+                    TransformatorPotency = transformator.potency,
+                    TransformatorCurrent = transformator.current
+                };
+
+                return reportViewModel;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<GetReportViewModel> GetById(Guid id)
+        {
+            try
+            {
+                if (id == null)
+                {
+                    throw new Exception("id is required!");
+                }
+
+                var report = await _reportRepository.GetById(id);
+
+                var test = await _testRepository.GetById(report.TestId);
+
+                var transformator = await _tansformatorRepository.GetById(test.TransformatorId);
+
+                var user = await _userRepository.GetById(transformator.UserId);
+
+                var reportViewModel = new GetReportViewModel
+                {
+                    Id = report.Id,
+                    Name = report.Name,
+                    UserName = user.Name,
+                    UserId = user.Id,
+                    TestName = test.testName,
+                    TestId = test.Id,
+                    TestStatus = test.testStatus,
+                    TestDurationInSeconds = test.testDurationInSeconds,
+                    TransformatorName = transformator.transformatorName,
+                    TransformatorId = transformator.Id,
+                    TransformatorInternalNumber = transformator.internalNumber,
+                    TransformatorTensionClass = transformator.tensionClass,
+                    TransformatorPotency = transformator.potency,
+                    TransformatorCurrent = transformator.current
                 };
 
                 return reportViewModel;
