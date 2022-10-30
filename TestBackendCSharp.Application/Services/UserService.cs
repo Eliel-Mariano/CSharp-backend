@@ -79,6 +79,7 @@ namespace TestCSharp.Application.Services
             }
             catch (Exception)
             {
+                
                 throw;
             }
         }
