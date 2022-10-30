@@ -63,6 +63,9 @@ namespace TestCSharp.Application.Services
 
                 var user = await _userRepository.GetById(id);
 
+                user.Name = userDto.Name;
+                user.Email = userDto.Email;
+
                 var savedUser = await _userRepository.Update(id, user);
 
                 var userViewModel = new UserViewModel
