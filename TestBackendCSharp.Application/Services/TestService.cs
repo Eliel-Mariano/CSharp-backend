@@ -83,6 +83,10 @@ namespace TestCSharp.Business.Business
 
                 var test = await _testRepository.GetById(id);
 
+                test.testName = testDto.testName;
+                test.testStatus = testDto.testStatus;
+                test.testDurationInSeconds = testDto.testDurationInSeconds;
+
                 var savedTest = await _testRepository.Update(id, test);
 
                 var testViewModel = new TestViewModel

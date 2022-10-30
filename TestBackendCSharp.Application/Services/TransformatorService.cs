@@ -2,6 +2,7 @@
 using TestCSharp.Application.Interfaces;
 using TestCSharp.Business.Models;
 using TestCSharp.ControllersDTO;
+using TestCSharp.Models;
 
 namespace TestCSharp.Business.Business
 {
@@ -69,6 +70,12 @@ namespace TestCSharp.Business.Business
                 }
 
                 var tansformator = await _tansformatorRepository.GetById(id);
+
+                tansformator.transformatorName = tansformatorDto.transformatorName;
+                tansformator.internalNumber = tansformatorDto.internalNumber;
+                tansformator.tensionClass = tansformatorDto.tensionClass;
+                tansformator.potency = tansformatorDto.potency;
+                tansformator.current = tansformatorDto.current;
 
                 var savedTansformator = await _tansformatorRepository.Update(id, tansformator);
 

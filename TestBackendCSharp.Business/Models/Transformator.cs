@@ -9,5 +9,7 @@ namespace TestCSharp.Business.Models
         public int tensionClass { get; set; }
         public int potency { get; set; }
         public int current { get; set; }
+
+        public Guid UserId { get; set; }
     }
 }
