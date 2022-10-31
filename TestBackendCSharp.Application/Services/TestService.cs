@@ -36,9 +36,9 @@ namespace TestCSharp.Business.Business
 
                 var test = new Test
                 {
-                    testName = testDto.testName,
-                    testStatus = testDto.testStatus,
-                    testDurationInSeconds = testDto.testDurationInSeconds,
+                    Name = testDto.testName,
+                    Status = testDto.testStatus,
+                    DurationInSeconds = testDto.testDurationInSeconds,
                     TransformatorId = testDto.TransformatorId
                 };
 
@@ -47,9 +47,9 @@ namespace TestCSharp.Business.Business
                 var testViewModel = new TestViewModel
                 {
                     Id = savedTest.Id,
-                    testName = savedTest.testName,
-                    testStatus = savedTest.testStatus,
-                    testDurationInSeconds = savedTest.testDurationInSeconds,
+                    testName = savedTest.Name,
+                    testStatus = savedTest.Status,
+                    testDurationInSeconds = savedTest.DurationInSeconds,
                     TransformatorId = savedTest.TransformatorId
                 };
 
@@ -87,18 +87,18 @@ namespace TestCSharp.Business.Business
 
                 var test = await _testRepository.GetById(id);
 
-                test.testName = testDto.testName;
-                test.testStatus = testDto.testStatus;
-                test.testDurationInSeconds = testDto.testDurationInSeconds;
+                test.Name = testDto.testName;
+                test.Status = testDto.testStatus;
+                test.DurationInSeconds = testDto.testDurationInSeconds;
 
                 var savedTest = await _testRepository.Update(id, test);
 
                 var testViewModel = new TestViewModel
                 {
                     Id = id,
-                    testName = savedTest.testName,
-                    testStatus = savedTest.testStatus,
-                    testDurationInSeconds = savedTest.testDurationInSeconds,
+                    testName = savedTest.Name,
+                    testStatus = savedTest.Status,
+                    testDurationInSeconds = savedTest.DurationInSeconds,
                     TransformatorId = savedTest.TransformatorId
                 };
 
@@ -124,9 +124,9 @@ namespace TestCSharp.Business.Business
                 var testViewModel = new GetTestViewModel
                 {
                     Id = test.Id,
-                    testName = test.testName,
-                    testStatus = test.testStatus,
-                    testDurationInSeconds = test.testDurationInSeconds,
+                    testName = test.Name,
+                    testStatus = test.Status,
+                    testDurationInSeconds = test.DurationInSeconds,
                     CreatedAt = test.CreatedAt,
                     UpdatedAt = test.UpdatedAt,
                     TransformatorId = test.TransformatorId

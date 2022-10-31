@@ -27,11 +27,11 @@ namespace TestCSharp.Business.Business
 
                 var tansformator = new Transformator
                 {
-                    transformatorName = tansformatorDto.transformatorName,
-                    internalNumber = tansformatorDto.internalNumber,
-                    tensionClass = tansformatorDto.tensionClass,
-                    potency = tansformatorDto.potency,
-                    current = tansformatorDto.current,
+                    Name = tansformatorDto.transformatorName,
+                    InternalNumber = tansformatorDto.internalNumber,
+                    TensionClass = tansformatorDto.tensionClass,
+                    Potency = tansformatorDto.potency,
+                    Current = tansformatorDto.current,
                     UserId = tansformatorDto.UserId
                 };
 
@@ -40,11 +40,11 @@ namespace TestCSharp.Business.Business
                 var tansformatorViewModel = new TransformatorViewModel
                 {
                     Id = savedTansformator.Id,
-                    transformatorName = savedTansformator.transformatorName,
-                    internalNumber = savedTansformator.internalNumber,
-                    tensionClass = savedTansformator.tensionClass,
-                    potency = savedTansformator.potency,
-                    current = savedTansformator.current,
+                    transformatorName = savedTansformator.Name,
+                    internalNumber = savedTansformator.InternalNumber,
+                    tensionClass = savedTansformator.TensionClass,
+                    potency = savedTansformator.Potency,
+                    current = savedTansformator.Current,
                     UserId = savedTansformator.UserId
                 };
 
@@ -73,22 +73,22 @@ namespace TestCSharp.Business.Business
 
                 var tansformator = await _tansformatorRepository.GetById(id);
 
-                tansformator.transformatorName = tansformatorDto.transformatorName;
-                tansformator.internalNumber = tansformatorDto.internalNumber;
-                tansformator.tensionClass = tansformatorDto.tensionClass;
-                tansformator.potency = tansformatorDto.potency;
-                tansformator.current = tansformatorDto.current;
+                tansformator.Name = tansformatorDto.transformatorName;
+                tansformator.InternalNumber = tansformatorDto.internalNumber;
+                tansformator.TensionClass = tansformatorDto.tensionClass;
+                tansformator.Potency = tansformatorDto.potency;
+                tansformator.Current = tansformatorDto.current;
 
                 var savedTansformator = await _tansformatorRepository.Update(id, tansformator);
 
                 var tansformatorViewModel = new TransformatorViewModel
                 {
                     Id = savedTansformator.Id,
-                    transformatorName = savedTansformator.transformatorName,
-                    internalNumber = savedTansformator.internalNumber,
-                    tensionClass = savedTansformator.tensionClass,
-                    potency = savedTansformator.potency,
-                    current = savedTansformator.current,
+                    transformatorName = savedTansformator.Name,
+                    internalNumber = savedTansformator.InternalNumber,
+                    tensionClass = savedTansformator.TensionClass,
+                    potency = savedTansformator.Potency,
+                    current = savedTansformator.Current,
                     UserId = savedTansformator.UserId
                 };
 
@@ -114,11 +114,11 @@ namespace TestCSharp.Business.Business
                 var tansformatorViewModel = new GetTransformatorViewModel
                 {
                     Id = tansformator.Id,
-                    transformatorName = tansformator.transformatorName,
-                    internalNumber = tansformator.internalNumber,
-                    tensionClass = tansformator.tensionClass,
-                    potency = tansformator.potency,
-                    current = tansformator.current,
+                    transformatorName = tansformator.Name,
+                    internalNumber = tansformator.InternalNumber,
+                    tensionClass = tansformator.TensionClass,
+                    potency = tansformator.Potency,
+                    current = tansformator.Current,
                     CreatedAt = tansformator.CreatedAt,
                     UpdatedAt = tansformator.UpdatedAt,
                     UserId = tansformator.UserId

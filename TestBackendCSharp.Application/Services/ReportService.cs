@@ -67,16 +67,16 @@ namespace TestBackendCSharp.Application.Services
                     Name = savedReport.Name,
                     Status = savedReport.Status,
                     UserId = transformator.UserId,
-                    TestName = test.testName,
+                    TestName = test.Name,
                     TestId = test.Id,
-                    TestStatus = test.testStatus,
-                    TestDurationInSeconds = test.testDurationInSeconds,
-                    TransformatorName = transformator.transformatorName,
+                    TestStatus = test.Status,
+                    TestDurationInSeconds = test.DurationInSeconds,
+                    TransformatorName = transformator.Name,
                     TransformatorId = transformator.Id ,
-                    TransformatorInternalNumber = transformator.internalNumber,
-                    TransformatorTensionClass = transformator.tensionClass,
-                    TransformatorPotency = transformator.potency,
-                    TransformatorCurrent = transformator.current
+                    TransformatorInternalNumber = transformator.InternalNumber,
+                    TransformatorTensionClass = transformator.TensionClass,
+                    TransformatorPotency = transformator.Potency,
+                    TransformatorCurrent = transformator.Current
                 };
 
                 return reportViewModel;
@@ -109,16 +109,16 @@ namespace TestBackendCSharp.Application.Services
                     Name = report.Name,
                     UserName = user.Name,
                     UserId = user.Id,
-                    TestName = test.testName,
+                    TestName = test.Name,
                     TestId = test.Id,
-                    TestStatus = test.testStatus,
-                    TestDurationInSeconds = test.testDurationInSeconds,
-                    TransformatorName = transformator.transformatorName,
+                    TestStatus = test.Status,
+                    TestDurationInSeconds = test.DurationInSeconds,
+                    TransformatorName = transformator.Name,
                     TransformatorId = transformator.Id,
-                    TransformatorInternalNumber = transformator.internalNumber,
-                    TransformatorTensionClass = transformator.tensionClass,
-                    TransformatorPotency = transformator.potency,
-                    TransformatorCurrent = transformator.current
+                    TransformatorInternalNumber = transformator.InternalNumber,
+                    TransformatorTensionClass = transformator.TensionClass,
+                    TransformatorPotency = transformator.Potency,
+                    TransformatorCurrent = transformator.Current
                 };
 
                 return reportViewModel;
